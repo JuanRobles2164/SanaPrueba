@@ -1,5 +1,6 @@
 using WebApplication1.Database;
 using WebApplication1.Database.Impl;
+using WebApplication1.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddScoped<IDBConnection, DBConnection>(provider =>
     return new DBConnection(connectionString);
 });
 
+builder.Services.AddScoped<IProductRepository, IProductRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
