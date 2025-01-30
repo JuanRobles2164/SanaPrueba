@@ -11,9 +11,9 @@ namespace WebApplication1.Domains.Impl
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Product>> GetProducts()
+        public async Task<IEnumerable<Product>> GetProducts(int page = 1, int pageSize = 10)
         {
-            return await _repository.GetProducts();
+            return await _repository.GetProducts(page, pageSize);
         }
     }
 }

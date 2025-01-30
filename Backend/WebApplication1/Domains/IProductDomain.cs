@@ -4,6 +4,6 @@ namespace WebApplication1.Domains
 {
     public interface IProductDomain
     {
-        public Task<IEnumerable<Product>> GetProducts();
+        public Task<IEnumerable<Product>> GetProducts(int page = 1, int pageSize = 10);
     }
 }

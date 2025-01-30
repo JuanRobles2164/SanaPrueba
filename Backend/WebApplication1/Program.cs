@@ -3,6 +3,7 @@ using WebApplication1.Database.Impl;
 using WebApplication1.Domains;
 using WebApplication1.Domains.Impl;
 using WebApplication1.Repositories;
+using WebApplication1.Repositories.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,7 @@ builder.Services.AddScoped<IDBConnection, DBConnection>(provider =>
     return new DBConnection(connectionString);
 });
 
-builder.Services.AddScoped<IProductRepository, IProductRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddScoped<IProductDomain, ProductDomain>();
 

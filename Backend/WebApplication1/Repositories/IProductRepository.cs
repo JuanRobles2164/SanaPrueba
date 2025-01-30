@@ -4,6 +4,6 @@ namespace WebApplication1.Repositories
 {
     public interface IProductRepository
     {
-        public Task<IEnumerable<Product>> GetProducts();
+        public Task<IEnumerable<Product>> GetProducts(int page = 1, int pageSize = 10);
     }
 }
