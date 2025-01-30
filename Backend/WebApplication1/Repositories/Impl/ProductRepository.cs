@@ -8,7 +8,7 @@ namespace WebApplication1.Repositories.Impl
         private readonly string _GET_PRODUCTS_QUERY = "SELECT * FROM Products; ";
         public ProductRepository(IDBConnection conn): base(conn) { }
 
-        public async Task<IEnumerable<Product>> GetCatalog()
+        public async Task<IEnumerable<Product>> GetProducts()
         {
             return await _conn.QueryAsync<Product>(_GET_PRODUCTS_QUERY);
         }
