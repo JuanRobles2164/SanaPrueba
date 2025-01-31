@@ -1,5 +1,14 @@
 # PRUEBA SANA E-COMMERCE
 
+
+- [PRUEBA SANA E-COMMERCE](#prueba-sana-e-commerce)
+  - [Disclaimers y Aclaraciones](#disclaimers-y-aclaraciones)
+    - [Base de datos](#base-de-datos)
+    - [Proyecto Back-End](#proyecto-back-end)
+  - [Instalación y Configuración](#instalación-y-configuración)
+    - [Requisitos Previos](#requisitos-previos)
+    - [Configuración](#configuración)
+
 ¡Hola!
 
 En este archivo explicaré las cosas que hice, las que no hice y por qué no las hice.
@@ -10,6 +19,8 @@ En la entrevista inicial me recomendaron que dijera qué sabía y qué no sabía
 
 Sin embargo, estaré capacitandome en React mientras la prueba esté en revisión. Tengo experiencia en otros frameworks de Front-End, como Angular y VueJS, así que no estaré capacitandome totalmente de cero
 
+## Disclaimers y Aclaraciones
+
 ### Base de datos
 
 Para la base de datos se utilizó SQL Server.
@@ -17,7 +28,7 @@ Para la base de datos se utilizó SQL Server.
 El diseño del diagrama de la base de datos se realizó en [draw.io](https://app.diagrams.net)
 
 
-## Proyecto Back-End
+### Proyecto Back-End
 
 * El proyecto en Back-End está basado en .NET Core 8.0
 
@@ -43,3 +54,45 @@ No se aplicaron metodologías de GitFlow debido a la complejidad del proyecto (E
 5. De aquí en adelante puede variar, pero usualmente la rama de desarrollo la prueba QA y si es aprobada, se realiza Merge con la versión de producción o master
    
 Eso solo un ejemplo de gitflow, depende de la metodología y de cada empresa ver qué se implementa. A lo que voy con esto es que, no implementé gitflow porque no lo consideré necesario, más no porque no sepa
+
+## Instalación y Configuración
+
+### Requisitos Previos
+
+Es estrictamente necesario que tengas instalado lo siguiente:
+
+- .NET SDK (versión 8.0)
+- SQL Server (versión 2019 o superior)
+- Visual Studio 2022 o Visual Studio Code
+
+### Configuración
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/JuanRobles2164/SanaPrueba.git
+   cd tu-carpeta-donde-clonaras
+
+2. Configura la base de datos:
+
+   * Ejecuta el script `Database/script.sql` para crear las tablas en SQL Server.
+  
+3. Configura la cadena de conexión:
+
+   * Abre el archivo `Backend/WebApplication1/appsettings.json` y modifica la cadena de conexión:
+    ```json
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Database=NombreDeTuBaseDeDatos;Trusted_Connection=True;"
+    }
+    ```
+    _Puedes tambien agregarle a la cadena de conexión el atributo `TrustServerCertificate=true;` para que puedas conectarte localmente o en cualquier entorno de desarrollo sin problemas._
+
+### Instalación y Ejecución
+
+1. Abre una terminal y ejecuta en el proyecto:
+   ```bash
+   cd Backend
+   dotnet restore
+   dotnet run
+   ```
+
+¡Y listo! ya tendrías el proyecto ejecutandose
