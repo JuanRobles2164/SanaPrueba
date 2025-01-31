@@ -34,3 +34,12 @@ El diseño del diagrama de la base de datos se realizó en [draw.io](https://app
 * Se aplicó la inyección de dependencias para asegurar la escalabilidad, testeabilidad y mantenibilidad del proyecto (Aunque este proyecto no tendrá escalas a futuro, es importante recalcar que es una buena práctica)
   * Se decidió usar AddScoped para mantener la aplicación escalable. Pues por cada petición se crea una instancia de lo que se está solicitando, por scope. Este uso se recomienda, por ejemplo, para el contexto de la base de datos (`DBConnection`)
 * Se agregaron test unitarios para asegurarse del correcto funcionamiento del endpoint creado. La decisión de agregarlos es netamente por seguir buenas prácticas, más no como requisito de la prueba
+
+No se aplicaron metodologías de GitFlow debido a la complejidad del proyecto (Es muy baja como para implementarlo). Pero tengo claro que cuando se trabaja en una determinada funcionalidad:
+1. Es necesario crear una rama a partir de la versión de desarrollo estable.
+2. Realiza los cambios
+3. Los subes a la nueva rama
+4. Realizas merge de tu rama de desarrollo local con la rama de desarrollo que originalmente clonaste
+5. De aquí en adelante puede variar, pero usualmente la rama de desarrollo la prueba QA y si es aprobada, se realiza Merge con la versión de producción o master
+   
+Eso solo un ejemplo de gitflow, depende de la metodología y de cada empresa ver qué se implementa. A lo que voy con esto es que, no implementé gitflow porque no lo consideré necesario, más no porque no sepa
